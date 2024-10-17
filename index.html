@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="https://static.wikia.nocookie.net/littleeinsteinspedia/images/b/b6/Flag_of_Canada.png/revision/latest?cb=20240224165410" />  
+  </head>
+
+  <body data-bs-theme="light" id="body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" style="position: fixed; top: 0; width: 100%; z-index: 1000">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Canada</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#history">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cuisine">Cuisine</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#travel">Travel</a>
+              </li>
+          </ul>
+          <button
+            class="btn btn-outline-secondary" id="btnColor" onclick="changeColorMode()">Dark Mode</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home  -->
+    <section id="home" class="container-fluid p-0">
+      <div
+        class="d-flex align-items-end"
+        style="
+          background: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/516000/516652-nathan-phillips-square.jpg') no-repeat center center/cover;
+          min-height: 100vh;
+          padding: 20px;
+        "
+        >
+        <div class="container-fluid " id="about">
+            <div class="container">
+              <h1 class="display-3 text-center fw-bold  text-white">Toronto, Canada!</h1>
+              <p class="lead text-center text-white">The largest, diverse, vibrant, and innovative city.</p>
+            </div>
+          </div>     
+    </section>
+
+    <!--History-->
+    <section id="history" class="container-fluid p-0">
+      <div class="container">
+        <div class="row my-3">
+          <h1 class="display-2 pt-5">HISTORY</h1>
+          <p>
+            Canada’s history began with Indigenous peoples who lived 
+            in the region for thousands of years before European contact.
+            In the 16th century, French explorers like Jacques Cartier 
+            arrived and established settlements in Quebec. The British 
+            later took control of the territory after the Seven Years' War 
+            in 1763. Canada officially became a country in 1867 through 
+            Confederation, initially forming with four provinces. Over time, 
+            it expanded to include provinces and territories across the continent. 
+            In 1931, Canada gained full independence from Britain, though it remains 
+            part of the Commonwealth. Canada participated in both World Wars and grew
+            into a peaceful, multicultural nation. Today, it is known for its strong 
+            economy, political stability, and vibrant cultural diversity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuisine-->
+    <section id="cuisine" class="container-fluid p-0">
+        <div class="container">
+            <div class="row my-5">
+              <h1 class="display-2 pt-5">CUISINE</h1>
+              <p>
+            Canadian cuisine is a rich blend of flavors and cultures, reflecting 
+            nation's diverse heritage. One of its most iconic dishes is poutine, 
+            a delicious combination of fries, cheese curds, and gravy, originating 
+            from Quebec. Maple syrup is another hallmark of Canadian food, often 
+            enjoyed on pancakes and waffles. Indigenous influences are seen in dishes 
+            bannock, a traditional flatbread that can be prepared in various ways. 
+            like butter tarts and Nanaimo bars showcase the sweet side of Canadian cooking. 
+            Overall, Canadian cuisine is a celebration of its multicultural roots, offering
+            a variety of unique and tasty dishes.
+              </p>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card h-100 shadow">
+                <img src="https://www.shutterstock.com/image-photo/dessert-original-name-beaver-tails-600nw-2075139325.jpg" class="card-img-top" alt="beavers" />
+                <div class="card-body">
+                  <h4 class="card-title">Beaver Tails</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100 shadow">
+                  <img src="https://api.vip.foodnetwork.ca/wp-content/uploads/2021/10/butter-tart-beauty-anna-olson-1.jpg" class="card-img-top" alt="butter" />
+                  <div class="card-body">
+                    <h4 class="card-title">Butter Tarts</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100 shadow">
+                  <img src="https://img.taste.com.au/sUf1xCHg/taste/2022/05/nanaimo-bars-178356-2.jpg" class="card-img-top" alt="nanaimo" />
+                  <div class="card-body">
+                    <h4 class="card-title">Nanaimo Bar</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100 shadow">
+                  <img src="https://static01.nyt.com/images/2024/05/15/multimedia/mk-poutine-vqkt/mk-poutine-vqkt-threeByTwoMediumAt2X.jpg" class="card-img-top" alt="poutine" />
+                  <div class="card-body">
+                    <h4 class="card-title">Poutine</h4>
+                  </div>
+                </div>
+              </div> 
+        </section>
+
+    <!-- Travel -->
+    <section id="travel" class="container-fluid p-0">
+      <div class="container my-3">
+        <div class="row my-3">
+          <h1 class="display-2 pt-5">TRAVEL</h1>
+        </div>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img src="https://www.globalnationalparks.com/wp-content/uploads/jasper-national-park-1024x519.jpg" class="card-img-top" alt="jasper" />
+              <div class="card-body">
+                <h4 class="card-title">Jasper National Park </h4>
+                <p class="card-text">
+                Jasper National Park is a spectacular wilderness area
+                known for its breathtaking landscapes, dark skies for
+                stargazing, and abundant wildlife.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://cdn.britannica.com/89/104889-050-A3D26337/Moraine-Lake-Banff-National-Park.jpg"
+                class="card-img-top"
+                alt="national park"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Banff National Park</h4>
+                <p class="card-text">
+                Renowned for its stunning turquoise lakes, rugged mountains, 
+                and abundant wildlife, making it a paradise for outdoor enthusiasts.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://cdn.britannica.com/30/94430-050-D0FC51CD/Niagara-Falls.jpg"
+                class="card-img-top"
+                alt="niagara falls"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Niagara Falls</h4>
+                <p class="card-text">
+                World-famous natural wonder that captivates visitors 
+                with its breathtaking waterfalls and exciting boat tours.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://mediaim.expedia.com/destination/1/f3944b1efee997623bcffbe8f85fc331.jpg"
+                class="card-img-top"
+                alt="Prince"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Prince Edward Island</h4>
+                <p class="card-text">
+                Famous for its picturesque beaches, 
+                rolling countryside, and charming fishing villages.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Quebec_City_Rue_St-Louis_2010.jpg"
+                class="card-img-top"
+                alt="Quebec"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Quebec City</h4>
+                <p class="card-text">
+                A charming, historic destination known for its cobblestone streets,
+                European architecture, and rich cultural heritage.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://storeys.com/media-library/toronto-best-city-expats.jpg?id=34014893&width=1245&height=700&quality=90&coordinates=0%2C31%2C0%2C31"
+                class="card-img-top"
+                alt="Toronto"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Toronto</h4>
+                <p class="card-text">
+                Canada’s largest city, celebrated for its diverse neighborhoods, 
+                iconic CN Tower, and thriving arts scene.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://media.lmpm.website/uploads/sites/74/2018/12/I_Blackcomb_Dusk_1-scaled.jpg"
+                class="card-img-top"
+                alt="whistler"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Whistler</h4>
+                <p class="card-text">
+                World-renowned ski resort that transforms into a summer 
+                playground for hiking and biking enthusiasts.
+                </p>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow">
+              <img
+                src="https://www.airtransat.com/getmedia/95e694f6-d087-4de7-8a43-b32d4fe6a2bf/colombie-britannique-vancouver-bateaux-british-columbia-boats-1000x600.aspx"
+                class="card-img-top"
+                alt="colombie"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Vancouver</h4>
+                <p class="card-text">
+                Vibrant coastal city surrounded by mountains, 
+                offering a perfect blend of urban life and outdoor adventures.
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+   </div>
+</section>
+
+    <!-- dark/light mode -->
+    <script>
+      var colorMode = "light";
+      function changeColorMode() {
+        if (colorMode == "light") {
+          document.getElementById("body").setAttribute("data-bs-theme", "dark");
+          document.getElementById("btnColor").innerHTML = "Light Mode";
+          colorMode = "dark";
+        } else {
+          document.getElementById("body").setAttribute("data-bs-theme", "light");
+          document.getElementById("btnColor").innerHTML = "Dark Mode";
+          colorMode = "light";
+        }
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+  </body>
+</html>
