@@ -18,198 +18,95 @@
         }
 
         .agent-container {
-            align-items: space-between;
+            display: flex;
             flex-wrap: wrap;
-            width: 100%;
-        }
-
-        .bannertext {
-            width: 100%;
-            position: absolute;
-            top: 10px;
-            color: rgba(255, 255, 255, 0.700);
-            font-size: 60px;
+            justify-content: center;
+            padding: 50px;
         }
 
         .character {
             border-radius: 20px;
             box-shadow: 0 3px 15px rgba(204, 47, 47, 0.5);
             margin: 10px;
-            margin-top: 50px;
-            margin-bottom: auto;
             padding: 20px;
             text-align: center;
             border-style: solid;
+            color: #fff;
         }
 
-        .character .img-container {
+        .character img {
             border-radius: 50%;
-            width: 250px;
-            height: 210px;
-        }
-
-        .character .img-container img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .character .number {
-            border-radius: 10px;
-            font-size: 0.8em;
-        }
-
-        .character .name {
-            letter-spacing: 1px;
+            width: 230px;
+            height: 220px;
         }
 
         .btn {
             width: 120px;
+            margin-top: 10px;
             box-shadow: 0 3px 15px rgba(204, 47, 47, 0.5);
-        }
-
-        .agentimg {
-            border: 5px solid #fff;
-            border-radius: 50%;
-            height: 400px;
-            width: 400px;
         }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <!-- Agent List -->
-        <div id="agentListSection">
-            <div class="row mt-5 text-center">
-                <div class="col">
-                    <div class="bannertext text-light fw-bold ">THE AGENTS</div>
-                </div>
-            </div>
-            <div class="agent-container d-flex justify-content-center m-0 text-light p-2" id="agentContainer">
+        <div class="row mt-5 text-center">
+            <div class="col">
+                <h1 class="banner-text text-light fs-1 mb-3">THE AGENTS</h1>
             </div>
         </div>
-
-        <!-- Agent Details -->
-        <div id="agentDetailsSection" class="details-container text-center text-light my-5 mt-5 align-items-center"
-            style="display:none;">
-            <img id="agentImage" src="" alt="Agent Image" class="agentimg rounded-circle my-5 align-items-center"
-                width="250px">
-            <h3 id="agentName" class="fs-3 mt-1"></h3>
-            <p id="agentRole" class="fs-5 mt-0"></p>
-            <button onclick="showAgentList()" class="btn btn-outline-light p-2 fs-6">Back</button>
-        </div>
-
-        <script>
-            const agent_container = document.getElementById('agentContainer');
-            const agentListSection = document.getElementById('agentListSection');
-            const agentDetailsSection = document.getElementById('agentDetailsSection');
-
-            // API Fetch
-            const fetchCharacters = async () => {
-                try {
-                    const url = 'https://valorant-api.com/v1/agents';
-                    const res = await fetch(url);
-                    const data = await res.json();
-
-                    if (res.ok) {
-                        const agents = data.data;
-                        const uniqueAgents = removeDuplicates(agents, 'displayName');
-
-                        uniqueAgents.forEach(agent => createCharacterCard(agent));
-                        loadData(uniqueAgents); 
-                    } else {
-                        console.error('Error fetching data:', data.status);
-                    }
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
-            };
-
-            // Character Card
-            function createCharacterCard(agent) {
-                const characterElement = document.createElement('div');
-                characterElement.classList.add('character');
-
-                const displayName = agent.displayName || 'N/A';
-                const roleDisplayName = agent.role?.displayName || 'N/A';
-
-                const characterInnerHTML = `
-                    <div class="img-container mt-1">
-                        <img src="${agent.displayIcon}" alt="${displayName}">
-                    </div>
-
-                    <div class="info1 my-3 mt-3">
-                        <h3 class="name mb-1 fs-4">${displayName}</h3>
-                        <small class="status fs-5">Role: <span>${roleDisplayName}</span></small>
-                    </div>
-                    <button onclick="showAgentDetails('${displayName}', '${roleDisplayName}', '${agent.displayIcon}')" class="btn btn-outline-light p-2 fs-6">View</button>
-                `;
-
-                characterElement.innerHTML = characterInnerHTML;
-                agent_container.appendChild(characterElement);
-            }
-
-            // Agent Details
-            function showAgentDetails(name, role, image) {
-                
-                const url = new URL(window.location);
-                url.searchParams.set('agentName', name); 
-                window.history.pushState({}, '', url);  
-
-               
-                agentListSection.style.display = 'none';
-                agentDetailsSection.style.display = 'block';
-
-                
-                document.getElementById('agentName').textContent = name;
-                document.getElementById('agentRole').textContent = "Role: " + role;
-                document.getElementById('agentImage').src = image;
-            }
-
-            // Agent List
-            function showAgentList() {
-            
-                const url = new URL(window.location);
-                url.searchParams.delete('agentName'); 
-                window.history.pushState({}, '', url); 
-                
-                agentDetailsSection.style.display = 'none';
-                agentListSection.style.display = 'block';
-            }
-
-            function removeDuplicates(array, property) {
-                const uniqueValues = new Set();
-                return array.filter(item => {
-                    if (!uniqueValues.has(item[property])) {
-                        uniqueValues.add(item[property]);
-                        return true;
-                    }
-                    return false;
-                });
-            }
-
-            function loadData(agents) {
-                const urlParameters = new URLSearchParams(window.location.search);
-                if (urlParameters.has("agentName")) {
-                    const agentName = urlParameters.get("agentName");
-                    const selectedAgent = agents.find(agent => agent.displayName.toLowerCase() === agentName.toLowerCase());
-
-                    if (selectedAgent) {
-                        const roleDisplayName = selectedAgent.role?.displayName || 'N/A';
-                        showAgentDetails(selectedAgent.displayName, roleDisplayName, selectedAgent.displayIcon);
-                    } else {
-                        console.error("Agent not found!");
-                    }
-                }
-            }
-
-            fetchCharacters();
-        </script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+        <div class="agent-container" id="agentContainer"></div>
     </div>
+
+    <script>
+        const agentContainer = document.getElementById('agentContainer');
+
+        // Fetch and display agents
+        const fetchAgents = async () => {
+            try {
+                const url = 'https://valorant-api.com/v1/agents';
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (res.ok) {
+                    const agents = removeDuplicates(data.data, 'displayName');
+                    agents.forEach(agent => createAgentCard(agent));
+                } else {
+                    console.error('Error fetching agents:', data.status);
+                }
+            } catch (error) {
+                console.error('Error fetching agents:', error);
+            }
+        };
+
+        const createAgentCard = (agent) => {
+            const card = document.createElement('div');
+            card.className = 'character';
+
+            const role = agent.role?.displayName || 'Unknown';
+            card.innerHTML = `
+                <img src="${agent.displayIcon}" alt="${agent.displayName}">
+                <h3>${agent.displayName}</h3>
+                <p>Role: ${role}</p>
+                <a href="view.html?agentName=${agent.displayName}" class="btn btn-outline-light">View</a>
+            `;
+
+            agentContainer.appendChild(card);
+        };
+
+        const removeDuplicates = (array, property) => {
+            const unique = new Set();
+            return array.filter(item => {
+                if (!unique.has(item[property])) {
+                    unique.add(item[property]);
+                    return true;
+                }
+                return false;
+            });
+        };
+
+        fetchAgents();
+    </script>
 </body>
 
 </html>
