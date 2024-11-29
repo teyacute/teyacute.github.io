@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container-404 {
+    height: 100vh;
+    background-image: url('404bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.row-404 {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+}
+
+.neonText {
+    color: #effefe;
+    text-shadow:
+        0 0 7px #effefe,
+        0 0 10px #effefe,
+        0 0 21px #effefe,
+        0 0 42px #dfa52a,
+        0 0 82px #dfa52a,
+        0 0 92px #dfa52a,
+        0 0 102px #dfa52a,
+        0 0 151px #dfa52a;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+    animation: flicker 1.5s infinite alternate;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Animation */
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #dfa52a,
+            0 0 80px #dfa52a,
+            0 0 90px #dfa52a,
+            0 0 100px #dfa52a,
+            0 0 150px #dfa52a;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+.img-container {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.btn-custom {
+    background-color: transparent;
+    border: 2px solid #be9b7c;
+    padding: 6px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-custom:hover {
+    background-color: #dfa52a;
+    color: #fff;
+    border-color: #ffa500;
+}
